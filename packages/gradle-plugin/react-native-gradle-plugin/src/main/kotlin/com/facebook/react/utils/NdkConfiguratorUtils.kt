@@ -84,9 +84,7 @@ internal object NdkConfiguratorUtils {
       return
     }
 
-    project
-        .gradle
-        .sharedServices
+    project.gradle.sharedServices
         .registerIfAbsent("StubPchBuildService", StubPchBuildService::class.java) { spec ->
           spec.parameters.cxxDirectory.set(project.layout.projectDirectory.dir(".cxx"))
         }

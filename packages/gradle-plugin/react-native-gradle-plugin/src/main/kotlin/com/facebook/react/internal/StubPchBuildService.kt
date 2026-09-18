@@ -17,9 +17,9 @@ import org.gradle.api.services.BuildServiceParameters
  * Generates stub precompiled headers when the build finishes. See [StubPchUtils].
  *
  * Android Studio configures the C++ projects of the selected variant while it fetches the Gradle
- * models (during sync), which happens after all tasks have run. A build service is closed after that, so by the
- * time [close] runs the `compile_commands.json` files of exactly the variant and ABI that Studio
- * requested are on disk.
+ * models (during sync), which happens after all tasks have run. A build service is closed after
+ * that, so by the time [close] runs the `compile_commands.json` files of exactly the variant and
+ * ABI that Studio requested are on disk.
  */
 abstract class StubPchBuildService : BuildService<StubPchBuildService.Params>, AutoCloseable {
 
