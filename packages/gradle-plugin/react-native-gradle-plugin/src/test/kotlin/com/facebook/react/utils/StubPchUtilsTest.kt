@@ -272,7 +272,8 @@ class StubPchUtilsTest {
           writeText(
               """[{"directory":"${cxxDir.absolutePath}",""" +
                   """"command":"/does/not/exist ${File(cxxDir, "cmake_pch.hxx").absolutePath}",""" +
-                  """"file":"${source.absolutePath}"}]""")
+                  """"file":"${source.absolutePath}"}]"""
+          )
         }
 
     StubPchUtils.generateStubsFor(compileCommands)
