@@ -3,6 +3,12 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
+if (NOT COMMAND target_precompile_headers)
+        function(target_reuse_reactnative_pch target)
+        endfunction()
+        return()
+endif ()
+
 # Clang stamps a .pch with the time it was built, which makes it
 # non-reproducible: ccache can never reuse one, and a PCH restored from the cache
 # gets rejected as "modified since built" by the sources that consume it. Both
